@@ -1,0 +1,427 @@
+.lab-mode
+{
+  --bg: var(--canvas);
+  --panel: var(--surface);
+  --line: var(--edge);
+  --green: var(--accent-text);
+  font-family: 'Space Mono',monospace;
+}
+
+.lab-mode .intro
+{
+  display: none;
+}
+
+.lab-mode header
+{
+  height: 85px;
+}
+
+.lab-mode main
+{
+  margin: 16px;
+  max-width: none;
+}
+
+.lab-mode .workspace
+{
+  grid-template-columns: 220px minmax(380px,1fr) 270px;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.lab-mode .workspace>aside:first-child
+{
+  grid-row: 1/3;
+  max-height: calc(100vh - 125px);
+  overflow: auto;
+}
+
+.lab-mode .center
+{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.lab-mode .workspace>aside:last-of-type
+{
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.lab-mode .packets
+{
+  grid-column: 2/4;
+  grid-row: 2;
+  margin: 0;
+  min-height: 180px;
+  max-height: 250px;
+}
+
+.lab-mode .panel
+{
+  border-radius: 2px;
+}
+
+.lab-mode .panel-title
+{
+  padding: 11px 14px;
+  font-size: 12px;
+  min-height: 49px;
+}
+
+.lab-mode .diagram
+{
+  padding: 0;
+  background: var(--canvas);
+}
+
+.lab-mode .network-mode svg
+{
+  height: auto;
+  max-height: calc(100vh - 365px);
+  min-height: 360px;
+  width: 100%;
+  font-family: 'Space Mono',monospace;
+}
+
+.lab-mode .diagram:not(.network-mode)
+{
+  padding-top: 15px;
+}
+
+.lab-mode .diagram:not(.network-mode) svg
+{
+  height: 390px;
+}
+
+.view-tabs
+{
+  display: flex;
+  gap: 5px;
+}
+
+.view-tabs button
+{
+  font: 11px 'Space Mono',monospace;
+  padding: 7px 12px;
+  text-transform: uppercase;
+}
+
+.lab-mode #motion-status
+{
+  font-size: 8px;
+  letter-spacing: 0;
+}
+
+.lab-mode .overview
+{
+  display: block;
+  padding: 20px;
+}
+
+.lab-mode .overview h2
+{
+  font: 22px 'Space Mono',monospace;
+  margin-top: 14px;
+}
+
+.lab-mode .overview p
+{
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.lab-mode .overview .eyebrow
+{
+  font-size: 10px;
+}
+
+.lab-mode .overview .tip
+{
+  font-size: 11px;
+}
+
+.lab-mode .overview button
+{
+  margin-top: 18px;
+  font-size: 11px;
+}
+
+.lab-mode #overview-toggle
+{
+  padding: 4px 7px;
+  font-size: 10px;
+}
+
+.message-card
+{
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--packet);
+  padding: 12px;
+  margin: 18px 0;
+}
+
+.message-card span
+{
+  display: inline-block;
+  background: var(--surface-subtle);
+  color: var(--packet);
+  padding: 3px 7px;
+  font-size: 10px;
+}
+
+.message-card b,
+.message-card small
+{
+  display: block;
+  margin-top: 9px;
+  font-size: 11px;
+}
+
+.message-card small
+{
+  color: var(--muted);
+}
+
+.step-list
+{
+  padding: 3px 0 13px 20px;
+}
+
+.step-list button
+{
+  border: 0;
+  padding: 8px 4px;
+  display: flex;
+  gap: 10px;
+  text-align: left;
+  width: 100%;
+  font: 11px 'Space Mono',monospace;
+  color: var(--secondary);
+}
+
+.step-list i
+{
+  font-style: normal;
+  display: grid;
+  place-items: center;
+  background: var(--surface-subtle);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.step-list small
+{
+  display: block;
+  font-size: 9px;
+  color: var(--secondary);
+  margin-top: 4px;
+}
+
+.step-list .current
+{
+  color: var(--ink);
+}
+
+.step-list .current i
+{
+  background: var(--accent);
+  color: #fff;
+}
+
+.lab-mode .protocol
+{
+  border-bottom: 1px solid var(--edge);
+  border-radius: 0;
+  padding: 11px;
+}
+
+.lab-mode .protocol small
+{
+  font-size: 10px;
+}
+
+.lab-mode .explanation
+{
+  min-height: 77px;
+  padding: 12px 18px;
+  background: var(--surface-subtle);
+  border-color: var(--line);
+}
+
+.lab-mode .explanation p
+{
+  margin: 4px 0;
+  font-size: 11px;
+}
+
+.lab-mode .controls
+{
+  padding: 10px 15px;
+}
+
+.lab-mode select
+{
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 8px;
+  color: var(--ink);
+  border-radius: 3px;
+}
+
+.lab-mode td,
+.lab-mode th
+{
+  padding: 8px 16px;
+}
+
+.lab-mode tbody tr
+{
+  cursor: pointer;
+}
+
+.lab-mode footer
+{
+  padding: 12px 20px;
+  font-size: 8px;
+}
+
+.cursor
+{
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink
+{
+  50%
+  {
+    opacity: 0;
+  }
+}
+
+@media(prefers-reduced-motion:reduce)
+{
+  .cursor
+  {
+    animation: none;
+  }
+}
+
+@media(max-width:1000px)
+{
+  .lab-mode .workspace
+  {
+    grid-template-columns: 210px minmax(400px,1fr);
+  }
+
+  .lab-mode .workspace>aside:last-of-type
+  {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .lab-mode .packets
+  {
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+
+  .lab-mode .workspace>aside:first-child
+  {
+    max-height: none;
+  }
+
+  .lab-mode .overview
+  {
+    display: block;
+  }
+
+  .lab-mode .network-mode svg
+  {
+    max-height: none;
+  }
+
+  .lab-mode .overview .facts
+  {
+    margin: 10px 0;
+  }
+}
+
+@media(max-width:720px)
+{
+  .lab-mode header
+  {
+    height: auto;
+  }
+
+  .lab-mode .workspace
+  {
+    display: block;
+  }
+
+  .lab-mode .workspace>aside:first-child
+  {
+    max-height: 240px;
+  }
+
+  .lab-mode .protocol-list
+  {
+    display: block;
+  }
+
+  .lab-mode .protocol
+  {
+    width: 100%;
+  }
+
+  .lab-mode .step-list
+  {
+    display: none;
+  }
+
+  .lab-mode .center,
+  .lab-mode .workspace>aside:last-of-type,
+  .lab-mode .packets
+  {
+    margin-top: 12px;
+  }
+
+  .lab-mode .network-mode svg
+  {
+    min-height: 0;
+    height: auto;
+  }
+
+  .lab-mode .controls
+  {
+    flex-wrap: wrap;
+  }
+
+  .lab-mode .overview h2
+  {
+    font-size: 20px;
+  }
+
+  .lab-mode #motion-status
+  {
+    display: none;
+  }
+
+  .lab-mode .panel-title
+  {
+    padding: 9px;
+  }
+
+  .lab-mode main
+  {
+    margin: 10px;
+  }
+
+  .lab-mode .packets
+  {
+    max-height: 250px;
+  }
+}

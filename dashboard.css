@@ -1,0 +1,517 @@
+header,
+.lab-mode header
+{
+  height: 72px;
+  padding: 0 19px;
+  gap: 18px;
+}
+
+.brand
+{
+  white-space: nowrap;
+}
+
+.header-actions,
+#layer-picker>div
+{
+  display: flex;
+  gap: 5px;
+}
+
+#layer-picker
+{
+  margin-right: auto;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+}
+
+#layer-picker>span
+{
+  font: 10px 'Space Mono',monospace;
+  letter-spacing: 1px;
+}
+
+#layer-picker button,
+.header-actions button
+{
+  font: 11px 'Space Mono',monospace;
+  padding: 5px 9px;
+  border-radius: 2px;
+}
+
+.lab-mode main
+{
+  margin: 12px 15px;
+}
+
+.lab-mode .workspace
+{
+  grid-template-columns: minmax(215px,20%) minmax(365px,1fr) minmax(235px,18%);
+  gap: 10px;
+}
+
+.lab-mode .workspace>aside:first-child
+{
+  max-height: calc(100vh - 100px);
+}
+
+.lab-mode .workspace>aside:last-of-type
+{
+  overflow: auto;
+  max-height: 550px;
+}
+
+.lab-mode .panel-title
+{
+  min-height: 39px;
+  padding: 7px 11px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.lab-mode .overview
+{
+  padding: 15px;
+}
+
+.lab-mode .overview h2
+{
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.lab-mode .network-mode svg
+{
+  height: clamp(315px,calc(100vh - 282px),510px);
+  min-height: 0;
+  max-height: none;
+}
+
+.lab-mode .diagram:not(.network-mode) svg
+{
+  height: clamp(265px,calc(100vh - 340px),450px);
+}
+
+.lab-mode .center .explanation
+{
+  display: none;
+}
+
+.lab-mode .packets .panel-title
+{
+  position: sticky;
+  top: 0;
+  background: var(--panel);
+  z-index: 1;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.lab-mode .packets
+{
+  min-height: 165px;
+}
+
+.lab-mode .controls
+{
+  padding: 0;
+  border: none;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.lab-mode .controls button,
+.lab-mode select
+{
+  padding: 5px 9px;
+  border-radius: 2px;
+  font-size: 11px;
+}
+
+.lab-mode .controls .primary,
+.lab-mode .view-tabs .selected
+{
+  background: var(--accent)!important;
+  color: #fff!important;
+  border-color: var(--accent)!important;
+}
+
+.lab-mode .search
+{
+  margin: 10px;
+  width: calc(100% - 20px);
+  padding: 8px;
+  font-size: 11px;
+}
+
+.categories
+{
+  display: flex;
+  margin: 0 10px 7px;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+
+.categories button
+{
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
+.categories button[aria-pressed=true]
+{
+  background: var(--selection);
+  color: var(--accent-text);
+  border-color: var(--edge-strong);
+}
+
+.categories button small
+{
+  display: inline-grid;
+  place-items: center;
+  min-width: 16px;
+  background: var(--surface-subtle);
+  color: var(--secondary);
+  border-radius: 10px;
+  font-size: 9px;
+}
+
+.legend
+{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+  margin-right: auto;
+}
+
+.legend span::before
+{
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--packet);
+  margin-right: 4px;
+}
+
+.lab-mode .step-list
+{
+  padding-bottom: 8px;
+}
+
+.lab-mode .protocol
+{
+  padding: 9px 10px;
+}
+
+.lab-mode .overview>p
+{
+  max-width: 47ch;
+}
+
+.lab-mode .workspace .endpoints
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 0;
+}
+
+.lab-mode .workspace .endpoints>[hidden]
+{
+  display: block;
+  visibility: hidden;
+}
+
+.lab-mode.expanded-network .workspace
+{
+  grid-template-columns: minmax(0,1fr);
+}
+
+.lab-mode.expanded-network .workspace>aside
+{
+  display: none;
+}
+
+.lab-mode.expanded-network .workspace .center,
+.lab-mode.expanded-network .workspace .packets
+{
+  grid-column: 1;
+}
+
+.lab-mode.expanded-network .workspace .packets
+{
+  grid-row: 2;
+}
+
+.lab-mode.expanded-network #expand
+{
+  background: var(--accent);
+  color: #fff;
+}
+
+.lab-mode .protocol.selected
+{
+  background: var(--selection)!important;
+  border: 1px solid var(--edge-strong)!important;
+  color: var(--ink);
+}
+
+.lab-mode .step-list button
+{
+  padding: 4px;
+}
+
+.lab-mode .step-list small
+{
+  margin-top: 2px;
+}
+
+dialog
+{
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 4px;
+  width: min(760px,calc(100% - 28px));
+  padding: 20px;
+  max-height: 85vh;
+}
+
+dialog::backdrop
+{
+  background: #16161599;
+}
+
+dialog h2
+{
+  margin: 0;
+  font-size: 20px;
+}
+
+.dialog-top
+{
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+.inspector-grid
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.decode,
+.hex
+{
+  padding: 10px;
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+
+.decode button
+{
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  font-size: 10px;
+  padding: 7px;
+  border: 0;
+  color: var(--text);
+}
+
+.decode button:disabled
+{
+  cursor: default;
+}
+
+.decode button strong
+{
+  text-align: right;
+}
+
+.hex
+{
+  align-content: start;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font: 11px 'Space Mono',monospace;
+}
+
+.hex span
+{
+  padding: 4px;
+}
+
+.hex .marked
+{
+  background: var(--accent);
+  color: white;
+}
+
+.light .search,
+.light select
+{
+  background: #fff;
+  color: var(--ink);
+}
+
+.light .message-card small
+{
+  color: var(--secondary);
+}
+
+.light .tip
+{
+  background: var(--surface-subtle);
+  color: var(--secondary);
+}
+
+@media(max-width:1000px)
+{
+  .lab-mode .workspace
+  {
+    grid-template-columns: 190px minmax(320px,1fr);
+  }
+
+  .lab-mode .workspace>aside:last-of-type
+  {
+    grid-column: 2;
+    grid-row: 2;
+    max-height: none;
+  }
+
+  .lab-mode .packets
+  {
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+
+  .lab-mode .network-mode svg
+  {
+    height: auto;
+  }
+
+  .lab-mode .workspace>aside:first-child
+  {
+    max-height: 670px;
+  }
+}
+
+@media(max-width:720px)
+{
+  header,
+  .lab-mode header
+  {
+    height: auto;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  header nav
+  {
+    width: auto;
+  }
+
+  #layer-picker
+  {
+    order: 4;
+    border: 0;
+    padding: 0;
+  }
+
+  .lab-mode .workspace>aside:first-child
+  {
+    max-height: 220px;
+  }
+
+  .lab-mode .workspace>aside:last-of-type
+  {
+    margin-top: 10px;
+  }
+
+  .lab-mode .workspace .packets
+  {
+    max-height: 300px;
+    margin-top: 10px;
+  }
+
+  .inspector-grid
+  {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Shared colors for the existing dark and light views. */
+
+body
+{
+  --canvas: #161615;
+  --surface: #1d1d1b;
+  --surface-subtle: #252522;
+  --edge: #383834;
+  --edge-strong: #77776f;
+  --ink: #e9e8e2;
+  --secondary: #b3b1a8;
+  --accent: #286b43;
+  --accent-hover: #327f50;
+  --accent-text: #a6c4ae;
+  --hover: #2a2b27;
+  --selection: #25352a;
+  --signal-slate: #a0b0bb;
+  --signal-green: #9eb89e;
+  --signal-mauve: #b8a8b3;
+  --signal-ochre: #c5af80;
+  --signal-clay: #c1a08e;
+  line-height: 1.6;
+}
+
+body.light
+{
+  color-scheme: light;
+  --canvas: #faf9f6;
+  --surface: #fffefa;
+  --surface-subtle: #f1f0eb;
+  --edge: #e5e5e0;
+  --edge-strong: #88877f;
+  --ink: #1f1f1d;
+  --secondary: #55554e;
+  --accent: #286b43;
+  --accent-hover: #215837;
+  --accent-text: #285d40;
+  --hover: #eeede7;
+  --selection: #e8eee7;
+  --signal-slate: #516773;
+  --signal-green: #44634b;
+  --signal-mauve: #705e6d;
+  --signal-ochre: #755923;
+  --signal-clay: #805c49;
+}
+
+p,
+.lab-mode .overview p,
+.tip,
+.lab-mode .overview .tip
+{
+  line-height: 1.6;
+}
+
+.lab-mode .controls .primary:hover,
+.lab-mode .view-tabs .selected:hover
+{
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}

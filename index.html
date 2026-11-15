@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Packet Lab · Network Protocol Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="network.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./">
+        <span class="logo">⬡</span>
+        PACKET<span>LAB</span>
+        <small>NETWORK PROTOCOLS</small>
+      </a>
+      <div id="layer-picker"></div>
+      <nav>
+        <button id="explore">◈ Explorer</button>
+        <button id="osi">▤ OSI model</button>
+      </nav>
+      <div class="header-actions">
+        <button id="expand" aria-label="Expand diagram" aria-pressed="false">⛶</button>
+        <button id="help" aria-label="Keyboard shortcuts">⌨</button>
+        <button id="theme" aria-label="Toggle color theme">☀</button>
+      </div>
+    </header>
+    <main id="app"></main>
+    <dialog id="packet-inspector">
+      <div class="dialog-top">
+        <div>
+          <span class="eyebrow">PACKET INSPECTOR</span>
+          <h2>Message</h2>
+        </div>
+        <form method="dialog">
+          <button aria-label="Close inspector">Close</button>
+        </form>
+      </div>
+      <p>Select a field to highlight its bytes.</p>
+      <div class="inspector-grid">
+        <section class="decode" aria-label="Decoded fields"></section>
+        <section class="hex" aria-label="Hex sample"></section>
+      </div>
+    </dialog>
+    <dialog id="shortcuts">
+      <div class="dialog-top">
+        <h2>Keyboard shortcuts</h2>
+        <form method="dialog">
+          <button>Close</button>
+        </form>
+      </div>
+      <dl class="facts">
+        <div>
+          <dt>Find a protocol</dt>
+          <dd>Ctrl / ⌘ + K</dd>
+        </div>
+        <div>
+          <dt>Play or pause</dt>
+          <dd>Space</dd>
+        </div>
+        <div>
+          <dt>Previous or next message</dt>
+          <dd>← / →</dd>
+        </div>
+        <div>
+          <dt>Close packet inspector</dt>
+          <dd>Esc</dd>
+        </div>
+      </dl>
+    </dialog>
+    <script src="app.js" defer></script>
+    <script src="network.js" defer></script>
+    <script src="catalog.js" defer></script>
+    <script src="dashboard.js" defer></script>
+  </body>
+</html>
